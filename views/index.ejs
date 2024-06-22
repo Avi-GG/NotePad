@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+US+Trad:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900">
+        <div class="border-b-2 border-zinc-600 pt-2 pl-2 text-center">
+            <h1 id="head" class="text-white text-[2rem] ">NotePad</h1>
+
+        </div>
+        <div class="form p-10 text-white">
+            <form action="/create" method="post">
+                
+                <input class="block w-full rounded-md outline-none px-5 py-2 bg-zinc-800" type="text" placeholder="Title goes here.." name="title">
+                <textarea class="block w-full rounded-md outline-none px-5 py-2 mt-2 bg-zinc-800 resize-none" placeholder="Write your tasks here.." name="details" ></textarea>
+                <input class="mt-2 bg-blue-600 px-5 py-2 rounded-md" type="submit" value="Create Task">
+            </form>
+        </div>
+        <div class="tasks flex gap-3 flex-wrap p-10">   <!-- flex-wrap will send to the next line if there is no space -->
+            <% if(files.length > 0) { %>
+                <% files.forEach((val) => { %>
+                    <div class="task overflow-hidden w-72 px-3 py-4 bg-zinc-800 rounded-md">
+                        <h1 class="text-white text-3xl tracking-tighter"><%= val %></h1>
+                        <div class="flex w-full justify-between items-center mt-3">
+                            <a class="text-blue-500 inline-block " href="/file/<%= val %>">Read More...</a>
+                            <a class="text-zinc-600" href="/edit/<%= val %>">Edit filename</a>
+                            <a href="/delete/<%= val %>">
+                                <i class="fa fa-trash text-red-500" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <h1 class="text-zinc-600">no tasks here yet.</h1>
+            <% } %>
+            
+        </div>
+    </div>
+</body>
+</html>
