@@ -44,7 +44,7 @@ app.get('/delete/:filename', (req, res) => {
 
 app.post('/create', (req, res) => {
     // console.log(req.body); //req.body is to get the data entered on the website
-    fs.writeFile(`./files/${req.body.title.split(' ').join()}.txt`, req.body.details, (err) => { //split(" ") --> it will split the sentence whenever found a space character and put it into array then .join("") will join all the array elements and make a string and return it
+    fs.writeFile(`./files/${req.body.title.split(' ').join("")}.txt`, req.body.details, (err) => { //split(" ") --> it will split the sentence whenever found a space character and put it into array then .join("") will join all the array elements and make a string and return it
         res.redirect("/");
     })
 })
