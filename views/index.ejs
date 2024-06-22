@@ -11,9 +11,13 @@
 </head>
 <body>
     <div class="main w-full min-h-screen bg-zinc-900">
-        <div class="border-b-2 border-zinc-600 pt-2 pl-2 text-center">
-            <h1 id="head" class="text-white text-[2rem] ">NotePad</h1>
-
+        <div class="border-b-2 border-zinc-600 pt-2 pl-2 flex ">
+            <div class="text-center w-[90vw] flex justify-center items-center">
+                <h1 id="head" class="text-white text-[2rem] ">NotePad</h1>
+            </div>
+            <span class="text-zinc-500 right-10 top-9 absolute">
+                <p id="sign" class="text-sm"> ~ made by avi</p>
+            </span>
         </div>
         <div class="form p-10 text-white">
             <form action="/create" method="post">
