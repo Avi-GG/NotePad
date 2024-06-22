@@ -3,7 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const { log } = require('console');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -67,6 +68,6 @@ app.post('/edit', (req, res) => {
 
 
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
     console.log(`Server is running on ${port}`);
 })
