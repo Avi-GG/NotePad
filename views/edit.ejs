@@ -13,8 +13,8 @@
         <a class="text-blue-500 inline-block mb-10" href="/">< Go Back to Home</a>
         <h1 class="text-3xl leading-10">Edit File Name : </h1>
         <form action="/edit" method="post" class="mt-3">
-            <input class="block w-[25rem] text-zinc-500 rounded-md outline-none px-5 py-2 bg-zinc-800" type="text" placeholder="Previous name" name="previous" value="<%= filename %>" >
-            <input class="block w-[25rem] rounded-md outline-none px-5 py-2 bg-zinc-800 mt-2" type="text" placeholder="New name" name="new">
+            <input class="block w-full sm:w-[25rem] text-zinc-500 rounded-md outline-none px-5 py-2 bg-zinc-800" type="text" placeholder="Previous name" name="previous" value="<%= filename %>" >
+            <input class="block w-full sm:w-[25rem] rounded-md outline-none px-5 py-2 bg-zinc-800 mt-2" type="text" placeholder="New name" name="new">
             <input class="mt-2 bg-yellow-600 px-5 py-2 rounded-md" type="submit" value="Update Name">
         </form>
     </div>
